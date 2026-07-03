@@ -1,0 +1,10 @@
+{
+  "projectId": "green-symbol-enterprise",
+  "appId": "1:351902633678:web:3e290bce312aff3f2d4a9f",
+  "apiKey": "AIzaSyDK1JyAneUrjVj1o05vzZ-_CIsLeO1pb-k",
+  "authDomain": "green-symbol-enterprise.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "green-symbol-enterprise.firebasestorage.app",
+  "messagingSenderId": "351902633678",
+  "measurementId": "G-YLTXPR0SQH"
+}

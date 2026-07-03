@@ -1,0 +1,23 @@
+{
+  "project_id": "gen-lang-client-0479095513",
+  "collections": [
+    {
+      "name": "users",
+      "description": "Stores user profiles and their roles (admin or user).",
+      "fields": [
+        { "name": "email", "type": "string", "description": "User's email address" },
+        { "name": "firstName", "type": "string", "description": "User's first name" },
+        { "name": "lastName", "type": "string", "description": "User's last name" },
+        { "name": "role", "type": "string", "description": "Role of the user: 'admin' or 'user'" },
+        { "name": "createdAt", "type": "timestamp", "description": "When the user was created" }
+      ],
+      "rules": [
+        "Users can read their own profile.",
+        "Users can update their own profile.",
+        "Admins can read and update all profiles."
+      ],
+      "indexes": []
+    }
+  ]
+}
+
