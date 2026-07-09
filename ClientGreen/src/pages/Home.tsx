@@ -78,7 +78,7 @@ export default function Home() {
           <p className="text-center text-sm font-medium text-muted-foreground mb-8">TRUSTED BY INDUSTRY LEADERS</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Placeholder SVGs for logos */}
-            {['Microsoft', 'Palo Alto', 'AVEVA', 'Digital Matter', 'Universal Robots'].map((partner) => (
+            {['Microsoft', 'Palo Alto', 'AVEVA', 'Linkshadow'].map((partner) => (
               <div key={partner} className="text-xl font-bold font-sans tracking-tighter flex items-center gap-2">
                 <ShieldCheck className="h-6 w-6 text-primary" />
                 {partner}

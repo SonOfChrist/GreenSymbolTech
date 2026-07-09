@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { cn } from "@/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/src/lib/AuthContext";
-import { FaYoutube, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 import { ThemeToggle } from "../ThemeToggle";
 import companyLogo from "@/src/assets/companyLogo.png";
@@ -275,18 +275,10 @@ export default function WebsiteLayout() {
             <div className="pt-4">
               <h4 className="font-semibold mb-3 text-sm">Digital Coordinates</h4>
               <div className="flex gap-4">
-                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
+                <Link to="https://www.linkedin.com/company/greensymboltechnology" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
                   <FaLinkedin className="w-4 h-4" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  <FaTwitter className="w-3 h-3" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  <FaFacebook className="w-3 h-3" /> 
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  <FaYoutube className="w-4 h-4" />
-                </a>
+                </Link>
+                
               </div>
             </div>
           </div>

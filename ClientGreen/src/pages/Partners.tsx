@@ -3,12 +3,10 @@ import { Button } from "@/src/components/ui/button";
 
 export default function Partners() {
   const partners = [
-    { name: "Palo Alto Networks", type: "Security Partner", level: "Platinum" },
-    { name: "Microsoft", type: "Cloud Partner", level: "Gold" },
-    { name: "AVEVA", type: "Industrial Software", level: "Certified" },
-    { name: "Digital Matter", type: "IoT Hardware", level: "Authorized" },
-    { name: "Universal Robots", type: "Automation", level: "Integration Partner" },
-    { name: "Sunmi", type: "Business IoT", level: "Authorized" }
+    { name: "Palo Alto Networks", type: "Enterprise Cyber Security frameworks and zero-trust cloud network architectures.", level: "Platinum" },
+    { name: "Microsoft", type: "Resilient Business Technology solutions, cloud infrastructure via Azure, and modern workplace tools.", level: "Gold" },
+    { name: "AVEVA", type: "High-performance Industrial & Operation Technology platforming, asset optimization, and digital twins.", level: "Certified" },
+    { name: "Linkshadow", type: "an AI-native unified identity, Data and Network analytics platform designed to proactively mitigate sophisticated cyber threats. Positioned as a \"Visionary solution\" the platform replaces fragmented legacy monitoring with cross-domain threat correlation and real-time behavioral analytics", level: "Authorized" }
   ];
 
   return (
@@ -21,10 +19,10 @@ export default function Partners() {
             <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Partner Ecosystem</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
-            Global Tech, <span className="text-emerald-500">Local Execution</span>
+            Global Technology, <span className="text-emerald-500">Local Execution</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We collaborate with world-class technology vendors to deliver uncompromised infrastructure, fully certified and locally supported. Our strong global alliances guarantee that African enterprises benefit from top-tier security intelligence, cloud solutions, and smart hardware implementations, tailored to regional needs without compromising global standards.
+            We distribute, deploy, and support best-in-class ecosystems from global industry leaders
           </p>
         </div>
       </section>
