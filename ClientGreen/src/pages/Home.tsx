@@ -46,7 +46,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-tight text-foreground">
-              Success Through<span className="text-emerald-500"> Technology</span>
+              Success Through Inovative<span className="text-emerald-500"> Technology</span>
             </motion.h1>
             
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">

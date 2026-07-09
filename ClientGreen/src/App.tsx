@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Technologies from "./pages/Technologies";
-import Industries from "./pages/Industries";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -40,7 +39,6 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="technologies" element={<Technologies />} />
-              <Route path="industries" element={<Industries />} />
               <Route path="partners" element={<Partners />} />
               <Route path="contact" element={<Contact />} />
               <Route path="login" element={<Login />} />

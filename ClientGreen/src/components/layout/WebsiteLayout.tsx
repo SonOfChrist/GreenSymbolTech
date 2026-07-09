@@ -5,8 +5,11 @@ import { useState, useEffect, useRef } from "react";
 import { cn } from "@/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/src/lib/AuthContext";
+import { FaYoutube, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 import { ThemeToggle } from "../ThemeToggle";
+import companyLogo from "@/src/assets/companyLogo.png";
+import companyname from "@/src/assets/symboltechnologycompayname.png";
 
 export default function WebsiteLayout() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,7 +17,7 @@ export default function WebsiteLayout() {
   const [adminDropdownOpen, setAdminDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const { user, profile, logout } = useAuth();
+  const { user, profile } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,10 +45,12 @@ export default function WebsiteLayout() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Technologies", path: "/technologies" },
-    { name: "Industries", path: "/industries" },
+    { name: "Technology", path: "/technologies" },
     { name: "Partners", path: "/partners" },
+    { name: "About Us", path: "/about" },
+    { name: "Clients", path: "/clients" },
+    { name: "Resources", path: "/resources" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   const adminLinks = [
@@ -79,21 +84,14 @@ export default function WebsiteLayout() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground group-hover:scale-105 transition-transform">
-              <img src="/src/assets/Company Logo.jpg" alt="GreenSymbolTechLogo" className="h-8 w-8" />
+              <img src={companyLogo} alt="GreenSymbolTechLogo" className="h-8 w-8 rounded" />
             </div>
-            <span className="font-semibold text-lg tracking-tight">Green Symbol Tech</span>
+            <span className="font-semibold text-lg tracking-tight"><img src={companyname} alt="Company Name" className="h-8 w-50" /></span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((route) => (
-              <Link
-                key={route.path}
-                to={route.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === route.path ? "text-primary" : "text-muted-foreground"
-                )}
-              >
+              <Link key={route.path} to={route.path} className={cn( "text-sm font-medium transition-colors hover:text-primary", location.pathname === route.path ? "text-primary" : "text-muted-foreground")}>
                 {route.name}
               </Link>
             ))}
@@ -131,12 +129,7 @@ export default function WebsiteLayout() {
                         {adminLinks.map((link) => {
                           const isActive = location.pathname === link.path;
                           return (
-                            <Link
-                              key={link.name}
-                              to={link.path}
-                              onClick={() => setAdminDropdownOpen(false)}
-                              className={cn(
-                                "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                            <Link key={link.name} to={link.path} onClick={() => setAdminDropdownOpen(false)} className={cn("flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                                 isActive 
                                   ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
                                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -152,7 +145,6 @@ export default function WebsiteLayout() {
                         <button
                           onClick={() => {
                             setAdminDropdownOpen(false);
-                            logout();
                           }}
                           className="flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm font-medium text-rose-500 hover:bg-rose-500/10 transition-colors"
                         >
@@ -240,7 +232,6 @@ export default function WebsiteLayout() {
                       <button
                         onClick={() => {
                           setMobileMenuOpen(false);
-                          logout();
                         }}
                         className="flex items-center gap-3 px-3 py-2.5 mt-1 rounded-lg text-sm font-medium text-rose-500 hover:bg-rose-500/10 transition-colors w-full text-left"
                       >
@@ -274,9 +265,9 @@ export default function WebsiteLayout() {
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-2">
               <div className="h-6 w-6 rounded bg-primary flex items-center justify-center text-primary-foreground">
-                <img src="/src/assets/Company Logo.jpg" alt="GreenSymbolTechLogo" className="h-6 w-6" />
+                <img src={companyLogo} alt="GreenSymbolTechLogo" className="h-6 w-6 rounded" />
               </div>
-              <span className="font-semibold text-base tracking-tight">Green Symbol Technology</span>
+              <span className="font-semibold text-base tracking-tight"><img src={companyname} alt="Company Name" className="h-6 w-45" /></span>
             </div>
             <p className="text-sm text-muted-foreground max-w-sm">
               Empowering enterprise digital transformation with world-class technology solutions across Africa.
@@ -285,16 +276,16 @@ export default function WebsiteLayout() {
               <h4 className="font-semibold mb-3 text-sm">Digital Coordinates</h4>
               <div className="flex gap-4">
                 <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  {/* <Linkedin className="h-4 w-4" /> */}
+                  <FaLinkedin className="w-4 h-4" />
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  {/* <Twitter className="h-4 w-4" /> */}
+                  <FaTwitter className="w-3 h-3" />
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  {/* <Facebook className="h-4 w-4" /> */}
+                  <FaFacebook className="w-3 h-3" /> 
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
-                  {/* <Youtube className="h-4 w-4" /> */}
+                  <FaYoutube className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -302,11 +293,14 @@ export default function WebsiteLayout() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/about" className="hover:text-emerald-500 transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-emerald-500 transition-colors">Home</Link></li>
               <li><Link to="/technologies" className="hover:text-emerald-500 transition-colors">Technologies</Link></li>
-              <li><Link to="/industries" className="hover:text-emerald-500 transition-colors">Industries</Link></li>
-              <li><Link to="/contact" className="hover:text-emerald-500 transition-colors">Contact</Link></li>
-            </ul>
+              <li><Link to="/partners" className="hover:text-emerald-500 transition-colors">Partners</Link></li>
+              <li><Link to="/about" className="hover:text-emerald-500 transition-colors">About Us</Link></li>
+              <li><Link to="/clients" className="hover:text-emerald-500 transition-colors">Client</Link></li>
+              <li><Link to="/resources" className="hover:text-emerald-500 transition-colors">Resources</Link></li>
+              <li><Link to="/contact" className="hover:text-emerald-500 transition-colors">Contact Us</Link></li>
+            </ul> 
           </div>
           <div>
             <h4 className="font-semibold mb-4">Telephone Lines</h4>
@@ -320,10 +314,6 @@ export default function WebsiteLayout() {
           <div>
             <h4 className="font-semibold mb-4">Email Channels</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>
-                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">General</div>
-                <a href="mailto:info@greensymboltechnology.com" className="hover:text-emerald-500 transition-colors break-all">info@greensymboltechnology.com</a>
-              </li>
               <li>
                 <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">Enquiries</div>
                 <a href="mailto:sales@greensymboltechnology.com" className="hover:text-emerald-500 transition-colors break-all">sales@greensymboltechnology.com</a>
