@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Cpu, Database, Network, Lock, Zap, FileCode2 } from "lucide-react";
+import { Shield, Cpu, Database, Network, Lock, Zap, FileCode2, Cloud } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 
 export default function Technologies() {
@@ -8,7 +8,7 @@ export default function Technologies() {
       title: "Security Technology",
       description: "Military-grade cybersecurity frameworks designed for enterprise environments.",
       icon: Lock,
-      features: ["Zero-Trust Architecture", "Next-Gen Firewalls", "Endpoint Detection & Response (EDR)", "Identity & Access Management"],
+      features: ["Robust detection, protection, containment and access security", "Cyber Security (frameworks, IAM)", "Digital Security (cloud environments, endpoint safety)", "Physical Security (smart access control, automated surveillance)"],
       color: "text-red-400",
       bg: "bg-red-500/10",
       border: "border-red-500/20"
@@ -39,6 +39,24 @@ export default function Technologies() {
       color: "text-purple-400",
       bg: "bg-purple-500/10",
       border: "border-purple-500/20"
+    },
+    {
+      title: "Partner Technology Products",
+      description: "Globally recognized solutions integrated by our certified native experts.",
+      icon: Cloud,
+      features: ["Microsoft Ecosystem Integration", "Palo Alto Networks Security", "AVEVA Industrial Software", "Universal Robots Automation"],
+      color: "text-emerald-400",
+      bg: "bg-emerald-500/10",
+      border: "border-emerald-500/20"
+    },
+    {
+      title: "Technology Consulting Services",
+      description: "Strategic guidance and auditing for enterprise digital transformation.",
+      icon: FileCode2,
+      features: ["System Audits & Gap Analysis", "Infrastructure Architecture Design", "Compliance & Risk Assessment", "Project Management & Delivery"],
+      color: "text-orange-400",
+      bg: "bg-orange-500/10",
+      border: "border-orange-500/20"
     }
   ];
 
@@ -52,10 +70,10 @@ export default function Technologies() {
             <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Technology Stack</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
-            Enterprise-Grade <span className="text-emerald-500">Architecture</span>
+            Our <span className="text-emerald-500">Technologies</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover our comprehensive suite of technology solutions designed to secure, automate, and scale your organizational infrastructure. We leverage the latest in cloud computing, AI, and cybersecurity to build resilient systems that stand the test of time and evolving threat landscapes.
+            Discover our comprehensive suite of technology solutions designed to secure, automate, and scale your organizational infrastructure. 
           </p>
         </div>
       </section>

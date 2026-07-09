@@ -46,7 +46,7 @@ export default function DashboardLayout() {
             <div className="h-6 w-6 rounded bg-emerald-500 flex items-center justify-center text-primary-foreground">
               <span className="text-[10px] font-bold">GS</span>
             </div>
-            Green Symbol
+            Green Symbol Tech
           </Link>
         </div>
 

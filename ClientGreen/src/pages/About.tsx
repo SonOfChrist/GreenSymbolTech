@@ -38,7 +38,8 @@ export default function About() {
               Securing the Future of <span className="text-emerald-500">African Industries</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-              Green Symbol Africa Limited is a premier enterprise technology firm dedicated to bridging the gap between legacy industrial systems and next-generation cybersecurity, cloud computing, and AI architectures. We specialize in transforming complex systemic challenges into streamlined, digital-first solutions that drive unparalleled operational efficiency across the African continent and beyond. Our commitment to technological sovereignty ensures that our clients remain competitive and secure in a rapidly evolving global digital economy.
+              •	Corporate Culture/Identity: Our Motto, Goals and more Our history – Green Symbol technology is a registered trade name of Green Symbol Africa Limited, founded in 2013 and incorporated in 2015. <br/>
+              •	Our Team (Human Capital): 36 elite tech professionals and specialized regional consultants deployed for high-availability localized technical accountability.
             </motion.p>
           </motion.div>
         </div>
@@ -93,12 +94,12 @@ export default function About() {
       <section className="py-24 px-4 border-t border-border bg-muted/40">
         <div className="container mx-auto max-w-5xl text-center">
           <Users className="h-12 w-12 text-emerald-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-foreground mb-6">Regional Presence</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Regional Footprint</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            Operating across 48 regional nodes, providing low-latency enterprise support and localized engineering expertise throughout the continent.
+            Operating across this regional nodes, providing low-latency enterprise support and localized engineering expertise throughout the continent.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['Nairobi, KE', 'Kisumu, KE', 'Kisii, KE', 'Mombasa, KE'].map((city) => (
+            {['Nairobi, KE', 'Tanzania, TZ', 'Rwanda, RW', 'Democratic Republic of Congo, DRC'].map((city) => (
               <div key={city} className="p-4 border border-border rounded-lg bg-card text-foreground font-mono text-sm">
                 <span className="w-2 h-2 bg-emerald-500 rounded-full inline-block mr-2 animate-pulse"></span>
                 {city}

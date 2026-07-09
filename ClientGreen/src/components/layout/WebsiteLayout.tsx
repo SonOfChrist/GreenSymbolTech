@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Button } from "@/src/components/ui/button";
-import { Globe, Menu, ShieldCheck, X, LogIn, LayoutDashboard, Users, Briefcase, Ticket, Receipt, Settings, FileEdit, ChevronDown, LogOut } from "lucide-react";
+import { Globe, Menu, X, LogIn, LayoutDashboard, Users, Briefcase, Ticket, Receipt, Settings, FileEdit, ChevronDown, LogOut} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,7 +14,7 @@ export default function WebsiteLayout() {
   const [adminDropdownOpen, setAdminDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const { user, profile, logout } = useAuth() as any;
+  const { user, profile, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +63,7 @@ export default function WebsiteLayout() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/30 relative overflow-hidden">
-      <div className="inset-0 opacity-20 pointer-events-none overflow-hidden fixed z-0">
+      <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900 rounded-full blur-[120px]"></div>
         <div className="absolute top-[40%] right-[-5%] w-[30%] h-[50%] bg-blue-900 rounded-full blur-[120px]"></div>
       </div>
@@ -79,7 +79,7 @@ export default function WebsiteLayout() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground group-hover:scale-105 transition-transform">
-              <ShieldCheck className="h-5 w-5" />
+              <img src="/src/assets/Company Logo.jpg" alt="GreenSymbolTechLogo" className="h-8 w-8" />
             </div>
             <span className="font-semibold text-lg tracking-tight">Green Symbol Tech</span>
           </Link>
@@ -125,7 +125,7 @@ export default function WebsiteLayout() {
                     >
                       <div className="px-4 py-3 border-b border-border bg-muted/30">
                         <p className="text-sm font-medium text-foreground truncate">{profile?.firstName || 'User'} {profile?.lastName || ''}</p>
-                        <p className="text-xs text-muted-foreground truncate">{profile?.email || 'Admin User'}</p>
+                        <p className="text-xs text-muted-foreground truncate">{'Admin User'}</p>
                       </div>
                       <div className="p-2 flex flex-col gap-1">
                         {adminLinks.map((link) => {
@@ -213,7 +213,7 @@ export default function WebsiteLayout() {
                 </nav>
                 <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
                   <Link to="/contact" className="w-full">
-                    <Button variant="outline" className="w-full justify-center">Contact Sales</Button>
+                    <Button variant="outline" className="w-full justify-center">Contact</Button>
                   </Link>
                   {user ? (
                     <div className="flex flex-col gap-2 mt-2 p-3 bg-muted/30 rounded-xl border border-border">
@@ -270,42 +270,68 @@ export default function WebsiteLayout() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-muted/40 backdrop-blur-md py-12 md:py-16 mt-20 relative z-10">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-2">
               <div className="h-6 w-6 rounded bg-primary flex items-center justify-center text-primary-foreground">
-                <ShieldCheck className="h-3 w-3" />
+                <img src="/src/assets/Company Logo.jpg" alt="GreenSymbolTechLogo" className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-base tracking-tight">Green Symbol Africa</span>
+              <span className="font-semibold text-base tracking-tight">Green Symbol Technology</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground max-w-sm">
               Empowering enterprise digital transformation with world-class technology solutions across Africa.
             </p>
+            <div className="pt-4">
+              <h4 className="font-semibold mb-3 text-sm">Digital Coordinates</h4>
+              <div className="flex gap-4">
+                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
+                  {/* <Linkedin className="h-4 w-4" /> */}
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
+                  {/* <Twitter className="h-4 w-4" /> */}
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
+                  {/* <Facebook className="h-4 w-4" /> */}
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-emerald-500 transition-colors bg-background p-2 rounded-lg border border-border hover:border-emerald-500/50">
+                  {/* <Youtube className="h-4 w-4" /> */}
+                </a>
+              </div>
+            </div>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Solutions</h4>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Cybersecurity</li>
-              <li>Industrial Tech</li>
-              <li>Business Systems</li>
-              <li>Cloud Infrastructure</li>
+              <li><Link to="/about" className="hover:text-emerald-500 transition-colors">About Us</Link></li>
+              <li><Link to="/technologies" className="hover:text-emerald-500 transition-colors">Technologies</Link></li>
+              <li><Link to="/industries" className="hover:text-emerald-500 transition-colors">Industries</Link></li>
+              <li><Link to="/contact" className="hover:text-emerald-500 transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>About Us</li>
-              <li>Careers</li>
-              <li>News & Blog</li>
-              <li>Contact</li>
+            <h4 className="font-semibold mb-4">Telephone Lines</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Kenya:</span> <a href="tel:+254732602" className="hover:text-emerald-500 transition-colors">+254 732 602</a></li>
+              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Uganda:</span> <a href="tel:+256732602" className="hover:text-emerald-500 transition-colors">+256 732 602</a></li>
+              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Tanzania:</span> <a href="tel:+253732602" className="hover:text-emerald-500 transition-colors">+253 732 602</a></li>
+              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Rwanda:</span> <a href="tel:+257732602" className="hover:text-emerald-500 transition-colors">+257 732 602</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-              <li>Cookie Policy</li>
+            <h4 className="font-semibold mb-4">Email Channels</h4>
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li>
+                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">General</div>
+                <a href="mailto:info@greensymboltechnology.com" className="hover:text-emerald-500 transition-colors break-all">info@greensymboltechnology.com</a>
+              </li>
+              <li>
+                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">Enquiries</div>
+                <a href="mailto:sales@greensymboltechnology.com" className="hover:text-emerald-500 transition-colors break-all">sales@greensymboltechnology.com</a>
+              </li>
+              <li>
+                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">Helpdesk</div>
+                <a href="mailto:support@greensymboltechnology.com" className="hover:text-emerald-500 transition-colors break-all">support@greensymboltechnology.com</a>
+              </li>
             </ul>
           </div>
         </div>

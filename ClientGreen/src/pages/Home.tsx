@@ -1,7 +1,6 @@
 import { Button } from "@/src/components/ui/button";
-import { Card, CardContent } from "@/src/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Database, Globe2, ChevronRight} from "lucide-react";
+import { ArrowRight, ShieldCheck, Users, Briefcase, Settings, MapPin, Clock, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const staggerContainer = {
@@ -47,12 +46,11 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-tight text-foreground">
-              Transforming <span className="text-emerald-500">African</span> <br className="hidden md:block" />
-              Enterprise Logic.
+              Success Through<span className="text-emerald-500"> Technology</span>
             </motion.h1>
             
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-              World-class technology consulting, cybersecurity, and industrial systems engineered for modern enterprises. We deliver secure, scalable frameworks that propel African businesses into the global digital arena, ensuring robustness against emerging threats.
+              Comprehensive technology solutions in Security, Industrial & Operational, Business and Emerging Technologies across East Africa.o	CTAs: Book a Solution Enquiry (Solid Accent) | Explore Our Technologies (Stroke Border).
             </motion.p>
             
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -90,34 +88,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Technologies Grid */}
-      <section className="py-24 relative">
+       {/* Strategic 6 Dimensions Grid */}
+      <section className="py-24 relative bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Enterprise-Grade Architecture</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">The Strategic 6 Dimensions Grid</h2>
             <p className="text-muted-foreground text-lg text-balance">
-              We deploy scalable, secure ecosystems tailored to complex organizational requirements.
+              Our foundational pillars driving enterprise digital transformation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Cybersecurity Frameworks",
-                desc: "Zero-trust architecture, edge protection, and automated threat response systems.",
-                icon: ShieldCheck,
+                title: "Who We Are",
+                desc: "Trade name owned by Green Symbol Africa Limited (Est. 2013, Inc. 2015). A dynamic team of 26 dedicated professionals and partner consultants.",
+                icon: Users,
               },
               {
-                title: "Industrial Systems",
-                desc: "SCADA integration, IoT sensor networks, and robotic automation pipelines.",
-                icon: Database,
+                title: "What We Do",
+                desc: "Extensive portfolio spanning robust Cyber Security, built-to-fit Industrial Automation, Business/Enterprise ERPs, and Emerging Technology (AI, IoT, Robotics).",
+                icon: Briefcase,
               },
               {
-                title: "Cloud Infrastructure",
-                desc: "Hybrid cloud orchestration, serverless edge computing, and high-availability databases.",
-                icon: Globe2,
+                title: "How We Deliver",
+                desc: "Engineering tailored-to-suit, scalable platforms combining native expertise with globally recognized partner technologies.",
+                icon: Settings,
               },
-            ].map((feature, i) => (
+              {
+                title: "Where We Operate",
+                desc: "Headquartered in Kenya, with expanding operations delivering localized regional support in Uganda, Tanzania, and Rwanda.",
+                icon: MapPin,
+              },
+              {
+                title: "When It Matters",
+                desc: "Today, Tomorrow and into the future. Providing the transformation bridge to meet rapid digitalization threats.",
+                icon: Clock,
+              },
+              {
+                title: "Why It Matters",
+                desc: "To ensure industries, operations, and corporate teams remain secure, highly productive, automated, and sustainable in an ever-evolving global economy.",
+                icon: Target,
+              },
+            ].map((dimension, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -125,18 +138,18 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-colors group">
-                  <CardContent className="p-8 space-y-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <feature.icon className="h-6 w-6" />
+                <div className="h-full p-6 lg:p-8 bg-card border border-border hover:border-emerald-500/30 transition-colors rounded-2xl relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-500">
+                    <dimension.icon className="w-32 h-32 text-emerald-500" />
+                  </div>
+                  <div className="relative z-10">
+                    <div className="h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6">
+                      <dimension.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-xl font-semibold">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.desc}</p>
-                    <div className="pt-4 flex items-center text-primary font-medium text-sm">
-                      Learn more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </CardContent>
-                </Card>
+                    <h3 className="text-xl font-bold tracking-tight mb-3 text-foreground">{dimension.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{dimension.desc}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -162,21 +175,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      
       
       {/* CTA Section */}
       <section className="py-32 relative">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-4xl font-bold tracking-tight mb-6">Ready to Scale Your Infrastructure?</h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Book a consultation with our system architects to design a tailored digital transformation roadmap.
-          </p>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"> Book a consultation with our system architects to design a tailored digital transformation roadmap. </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="h-12 px-8">
-              Schedule Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8">
-              View Case Studies
-            </Button>
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button size="lg" className="h-12 px-8 w-full">
+                Schedule Consultation
+              </Button>
+            </Link>
+            <Link to="/case-studies" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="h-12 px-8 w-full">
+                View Case Studies
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

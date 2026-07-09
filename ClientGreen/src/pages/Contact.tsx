@@ -40,7 +40,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
+                {/* <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded bg-card border border-border flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5 text-muted-foreground" />
                   </div>
@@ -54,7 +54,7 @@ export default function Contact() {
                       <span className="flex items-center gap-1"><Phone className="h-3 w-3"/> +254 700 000 000</span>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
