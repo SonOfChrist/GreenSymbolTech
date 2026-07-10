@@ -1,5 +1,6 @@
-import { Handshake, ShieldCheck} from "lucide-react";
+import { Handshake, ShieldCheck, Database, Cpu, Server, LayoutGrid} from "lucide-react";
 import { Button } from "@/src/components/ui/button";
+// import { motion } from "framer-motion";
 
 export default function Partners() {
   const partners = [
@@ -7,6 +8,33 @@ export default function Partners() {
     { name: "Microsoft", type: "Resilient Business Technology solutions, cloud infrastructure via Azure, and modern workplace tools.", level: "Gold" },
     { name: "AVEVA", type: "High-performance Industrial & Operation Technology platforming, asset optimization, and digital twins.", level: "Certified" },
     { name: "Linkshadow", type: "an AI-native unified identity, Data and Network analytics platform designed to proactively mitigate sophisticated cyber threats. Positioned as a \"Visionary solution\" the platform replaces fragmented legacy monitoring with cross-domain threat correlation and real-time behavioral analytics", level: "Authorized" }
+  ];
+
+  const integrationMatrix = [
+    {
+      partner: "Microsoft",
+      it: "Hosts business software (ERP/M365) and enterprise security logs.",
+      ot: "Scales data storage pipelines for massive plant architectures.",
+      analytical: "Core enterprise identity provider, cloud infrastructure, and enterprise SIEM."
+    },
+    {
+      partner: "Palo Alto",
+      it: "Secures corporate endpoints and office network boundaries.",
+      ot: "Filters industrial protocols to block physical machine attacks.",
+      analytical: "Network perimeter firewall, ZTNA, and automated SOAR response."
+    },
+    {
+      partner: "LinkShadow",
+      it: "Tracks corporate user logins and patterns to find insider threats.",
+      ot: "Scans internal networks to catch malware attempting lateral movement.",
+      analytical: "AI behavioral profiling across network, identities, and sensitive data."
+    },
+    {
+      partner: "AVEVA",
+      it: "Feeds process efficiency and cost data up to enterprise layers.",
+      ot: "Connects to PLCs and hardware to monitor physical processes.",
+      analytical: "Live time-series asset telemetry, digital twins, and industrial process control."
+    }
   ];
 
   return (
@@ -50,6 +78,72 @@ export default function Partners() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+       {/* Strategic Partner Integration Matrix */}
+      <section className="py-24 px-4 border-t border-border bg-muted/20 relative">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-6">
+              <LayoutGrid className="h-3 w-3 text-cyan-400" />
+              <span className="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">Integration</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground">Strategic Partner Integration Matrix</h2>
+            <p className="text-muted-foreground text-lg">
+              By coordinating these four partners, organizations can secure their operations seamlessly from the IT boardroom down to the OT shop floor:
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-200">
+                <thead>
+                  <tr className="bg-muted/50 border-b border-border text-sm">
+                    <th className="p-5 font-semibold text-foreground w-1/4">
+                      Partner
+                    </th>
+                    <th className="p-5 font-semibold text-foreground w-1/4">
+                      <div className="flex items-center gap-2">
+                        <Server className="h-4 w-4 text-blue-500" />
+                        Enterprise Layer (IT)
+                      </div>
+                    </th>
+                    <th className="p-5 font-semibold text-foreground w-1/4">
+                      <div className="flex items-center gap-2">
+                        <Cpu className="h-4 w-4 text-amber-500" />
+                        Operations Layer (OT/Middleware)
+                      </div>
+                    </th>
+                    <th className="p-5 font-semibold text-foreground w-1/4">
+                      <div className="flex items-center gap-2">
+                        <Database className="h-4 w-4 text-emerald-500" />
+                        Analytical & Defense Role
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {integrationMatrix.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-muted/30 transition-colors">
+                      <td className="p-5 font-bold text-foreground">
+                        {row.partner}
+                      </td>
+                      <td className="p-5 text-sm text-muted-foreground leading-relaxed">
+                        {row.it}
+                      </td>
+                      <td className="p-5 text-sm text-muted-foreground leading-relaxed">
+                        {row.ot}
+                      </td>
+                      <td className="p-5 text-sm text-muted-foreground leading-relaxed">
+                        {row.analytical}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
