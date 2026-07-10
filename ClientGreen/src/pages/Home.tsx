@@ -46,11 +46,11 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold tracking-tight text-balance leading-tight text-foreground">
-              Success Through Inovative<span className="text-emerald-500"> Technology</span>
+              <span className="text-emerald-500">Success</span> Through Innovative Technology
             </motion.h1>
             
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-              Comprehensive technology solutions in Security, Industrial & Operational, Business and Emerging Technologies across East Africa.o	CTAs: Book a Solution Enquiry (Solid Accent) | Explore Our Technologies (Stroke Border).
+              Comprehensive technology solutions in Security, Industrial & Operational, Business and Emerging Technologies across East Africa.
             </motion.p>
             
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

@@ -6,7 +6,6 @@ import { cn } from "@/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/src/lib/AuthContext";
 import { FaLinkedin } from "react-icons/fa";
-
 import { ThemeToggle } from "../ThemeToggle";
 import companyLogo from "@/src/assets/companyLogo.png";
 import companyname from "@/src/assets/symboltechnologycompayname.png";
@@ -99,9 +98,6 @@ export default function WebsiteLayout() {
 
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Link to="/contact">
-              <Button variant="ghost">Contact Sales</Button>
-            </Link>
             {user ? (
               <div className="relative" ref={dropdownRef}>
                 <Button onClick={() => setAdminDropdownOpen(!adminDropdownOpen)} className="gap-2">
