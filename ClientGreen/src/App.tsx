@@ -16,6 +16,7 @@ import CRM from "./pages/CRM";
 import Projects from "./pages/Projects";
 import Tickets from "./pages/Tickets";
 import Invoices from "./pages/Invoices";
+import Inquiries from "./pages/Inquiries";
 import  Settings  from "./pages/Settings";
 import { AuthProvider, useAuth } from "./lib/AuthContext";
 
@@ -53,6 +54,9 @@ export default function App() {
                 <Route path="tickets" element={<Tickets />} />
                 <Route path="invoices" element={<Invoices />} />
                 <Route path="settings" element={<Settings />} />
+                <Route path="inquiries" element={<ProtectedRoute requireAdmin={true} />}>
+                  <Route index element={<Inquiries />} />
+                </Route>
                 <Route path="cms" element={<ProtectedRoute requireAdmin={true} />}>
                   <Route index element={<div className="flex h-full items-center justify-center text-muted-foreground">CMS Module (Admin Only)</div>} />
                 </Route>

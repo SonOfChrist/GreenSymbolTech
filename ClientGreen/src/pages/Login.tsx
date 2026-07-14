@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../lib/firebase';
 import { Button } from '../components/ui/button';
 import { ShieldCheck } from 'lucide-react';
@@ -24,8 +24,11 @@ export default function Login() {
 
     try {
       if (isLogin) {
-        await signInWithEmailAndPassword(auth, email, password);
-        navigate('/portal');
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid));
+        const userRole = userDoc.exists() ? userDoc.data()?.role : 'user';
+        const destination = userRole === 'admin' ? '/portal/inquiries' : '/portal';
+        navigate(destination);
       } else {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await setDoc(doc(db, 'users', userCredential.user.uid), {
@@ -37,7 +40,7 @@ export default function Login() {
         });
         setSuccess('Account successfully created! Redirecting to dashboard...');
         setTimeout(() => {
-          navigate('/portal');
+          navigate(role === 'admin' ? '/portal/inquiries' : '/portal');
         }, 2000);
       }
     } catch (err: unknown) {

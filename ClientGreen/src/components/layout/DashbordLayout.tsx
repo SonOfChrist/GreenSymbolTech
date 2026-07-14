@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, FolderKanban, Ticket, CreditCard, BookOpen, Settings, LogOut, Search, Bell, Shield} from "lucide-react";
+import { LayoutDashboard, Users, FolderKanban, Ticket, CreditCard, BookOpen, Settings, LogOut, Search, Bell, Shield, MessageSquare} from "lucide-react";
 import { cn } from "@/src/lib/utils";
 import { auth } from "@/src/lib/firebase";
 import { signOut } from "firebase/auth";
@@ -29,6 +29,7 @@ export default function DashboardLayout() {
     { name: "Projects", href: "/portal/projects", icon: FolderKanban },
     { name: "Tickets", href: "/portal/tickets", icon: Ticket },
     { name: "Invoices", href: "/portal/invoices", icon: CreditCard },
+    ...(isAdmin ? [{ name: "Inquiries", href: "/portal/inquiries", icon: MessageSquare }] : []),
     ...(isAdmin ? [{ name: "CMS (Admin)", href: "/portal/cms", icon: BookOpen }] : []),
     { name: "Settings", href: "/portal/settings", icon: Settings },
   ];

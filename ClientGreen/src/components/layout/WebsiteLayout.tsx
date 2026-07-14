@@ -282,10 +282,10 @@ export default function WebsiteLayout() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link to="/about" className="hover:text-emerald-500 transition-colors">Home</Link></li>
-              <li><Link to="/technologies" className="hover:text-emerald-500 transition-colors">Technologies</Link></li>
+              <li><Link to="/technologies" className="hover:text-emerald-500 transition-colors">Technology</Link></li>
               <li><Link to="/partners" className="hover:text-emerald-500 transition-colors">Partners</Link></li>
               <li><Link to="/about" className="hover:text-emerald-500 transition-colors">About Us</Link></li>
-              <li><Link to="/clients" className="hover:text-emerald-500 transition-colors">Client</Link></li>
+              <li><Link to="/clients" className="hover:text-emerald-500 transition-colors">Clients</Link></li>
               <li><Link to="/resources" className="hover:text-emerald-500 transition-colors">Resources</Link></li>
               <li><Link to="/contact" className="hover:text-emerald-500 transition-colors">Contact Us</Link></li>
             </ul> 
@@ -293,10 +293,7 @@ export default function WebsiteLayout() {
           <div>
             <h4 className="font-semibold mb-4">Telephone Lines</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Kenya:</span> <a href="tel:+254732602" className="hover:text-emerald-500 transition-colors">+254 732 602</a></li>
-              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Uganda:</span> <a href="tel:+256732602" className="hover:text-emerald-500 transition-colors">+256 732 602</a></li>
-              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Tanzania:</span> <a href="tel:+253732602" className="hover:text-emerald-500 transition-colors">+253 732 602</a></li>
-              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Rwanda:</span> <a href="tel:+257732602" className="hover:text-emerald-500 transition-colors">+257 732 602</a></li>
+              <li className="flex items-center gap-2"><span className="w-16 font-medium text-foreground">Kenya:</span> <a href="tel:+254732602" className="hover:text-emerald-500 transition-colors">+254 722 732 602</a></li>
             </ul>
           </div>
           <div>
